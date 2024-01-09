@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web studio (version 5.0)</title>
+    <title>Effective Solutions for Your Business</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,13 +21,22 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  
+  <body>
     <header class="header-class">
       <div class="container header-container">
         <nav class="header-nav">
           <a class="logo" href="./index.html">
             Web<span class="logo-span">Studio</span>
           </a>
+          <button
+            type="button"
+            class="menu-burger"
+            aria-label="Open menu-burger"
+          >
+            <svg class="icon-menu-burger" width="24" height="24">
+              <use href="./images/icons.svg#icon-burger"></use>
+            </svg>
+          </button>
           <ul class="nav-menu">
             <li>
               <a href="./index.html" class="page-nav current">Studio</a>
@@ -43,12 +52,18 @@
         <address class="contacts">
           <ul class="adress-list">
             <li>
-              <a href="mailto:info@devstudio.com" class="contact-adrs"
+              <a
+                class="contacts-head"
+                href="mailto:info@devstudio.com"
+                class="contact-adrs"
                 >info@devstudio.com</a
               >
             </li>
             <li>
-              <a href="tel:+110001111111" class="contact-adrs"
+              <a
+                class="contacts-head"
+                href="tel:+110001111111"
+                class="contact-adrs"
                 >+11 (000) 111-11-11</a
               >
             </li>
@@ -60,7 +75,7 @@
     <main>
       <!-- Effective Solutions for Your Business -->
       <section class="title-section">
-        <div class="container">
+        <div class="hero-container container">
           <h1 class="title-text">Effective Solutions for Your Business</h1>
           <button type="button" class="button">Order Service</button>
         </div>
@@ -68,7 +83,7 @@
       <!-- section2 -->
       <section class="company-section">
         <div class="container">
-          <h2 class="visually-hidden">section2</h2>
+          <h2 class="visually-hidden">Our Capabilities</h2>
 
           <ul class="company-menu">
             <li class="target-item">
@@ -129,13 +144,14 @@
           <ul class="members-menu">
             <li class="team-member">
               <img
-                src="./images/img(1).jpg"
-                alt="man-with-laptop-presenting-something"
-                width="264"
+                srcset="./images/Mark.jpg 1x, ./images/Mark@2x.jpg 2x"
+                src="./images/Mark.jpg"
+                alt="Product Designer"
               />
               <div class="members-container">
                 <h3 class="member-title">Mark Guerrero</h3>
                 <p class="member-descr">Product Designer</p>
+
                 <ul class="socials-menu">
                   <li class="socials-item">
                     <a class="socials" href="./index.html">
@@ -168,8 +184,13 @@
                 </ul>
               </div>
             </li>
+
             <li class="team-member">
-              <img src="./images/img.jpg" alt="img-2" width="264" />
+              <img
+                srcset="./images/Tom.jpg 1x, ./images/Tom@2x.jpg 2x"
+                src="./images/Tom.jpg"
+                alt="Frontend Developer"
+              />
               <div class="members-container">
                 <h3 class="member-title">Tom Ford</h3>
                 <p class="member-descr">Frontend Developer</p>
@@ -205,11 +226,12 @@
                 </ul>
               </div>
             </li>
+
             <li class="team-member">
               <img
-                src="./images/img(2).jpg"
-                alt="young-beautiful-woman-pink-warm-sweater"
-                width="264"
+                srcset="./images/Camila.jpg 1x, ./images/Camila@2x.jpg 2x"
+                src="./images/Camila.jpg"
+                alt="Frontend Developer"
               />
               <div class="members-container">
                 <h3 class="member-title">Camila Garcia</h3>
@@ -246,11 +268,12 @@
                 </ul>
               </div>
             </li>
+
             <li class="team-member">
               <img
-                src="./images/img(3).jpg"
-                alt="confident-handsome-guy-posing-against"
-                width="264"
+                srcset="./images/Daniel.jpg 1x, ./images/Daniel@2x.jpg 2x"
+                src="./images/Daniel.jpg"
+                alt="UI Designer"
               />
               <div class="members-container">
                 <h3 class="member-title">Daniel Wilson</h3>
@@ -297,7 +320,37 @@
           <ul class="portfolio-menu">
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img6.jpg" alt="bank" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/BankingApp.jpg 1x,
+                      ./images/img@2x-5.jpg   2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img-5.jpg    1x,
+                      ./images/Tablet/img@2x-5.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img-5.jpg    1x,
+                      ./images/Mobile/img@2x-5.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/BankingApp.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -311,7 +364,37 @@
             </li>
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img7.jpg" alt="cash" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/CashlessPayment.jpg    1x,
+                      ./images/CashlessPayment@2x.jpg 2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img-4.jpg    1x,
+                      ./images/Tablet/img@2x-4.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img-4.jpg    1x,
+                      ./images/Mobile/img@2x-4.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/CashlessPayment.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -325,7 +408,37 @@
             </li>
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img8.jpg" alt="medi" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/MeditationApp.jpg 1x,
+                      ./images/img@2x-3.jpg      2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img-3.jpg    1x,
+                      ./images/Tablet/img@2x-3.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img-3.jpg    1x,
+                      ./images/Mobile/img@2x-3.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/MeditationApp.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -339,7 +452,37 @@
             </li>
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img9.jpg" alt="mark" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/TaxiService.jpg 1x,
+                      ./images/img@2x-2.jpg    2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img-2.jpg    1x,
+                      ./images/Tablet/img@2x-2.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img-2.jpg    1x,
+                      ./images/Mobile/img@2x-2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/Mobile/img@2x-2.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -353,7 +496,37 @@
             </li>
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img10.jpg" alt="illus" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/ScreenIllustrations.jpg 1x,
+                      ./images/img@2x-1.jpg            2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img-1.jpg    1x,
+                      ./images/Tablet/img@2x-1.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img-1.jpg    1x,
+                      ./images/Mobile/img@2x-1.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/ScreenIllustrations.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -367,7 +540,37 @@
             </li>
             <li class="portfolio-menu-item">
               <div class="portfolio-img">
-                <img src="./images/img11.jpg" alt="cours" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/OnlineCourses.jpg 1x,
+                      ./images/img@2x.jpg        2x
+                    "
+                  />
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/Tablet/img.jpg    1x,
+                      ./images/Tablet/img@2x.jpg 2x
+                    "
+                  />
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/Mobile/img.jpg    1x,
+                      ./images/Mobile/img@2x.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/OnlineCourses.jpg"
+                    alt="application"
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="portfolio-img-descr">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -383,6 +586,9 @@
         </div>
       </section>
     </main>
+
+    <!---Footer-->
+
     <footer class="footer-class">
       <div class="container footer-div">
         <div class="flogo-container">
@@ -395,7 +601,7 @@
             digital marketing & growth solutions.
           </p>
         </div>
-        <div>
+        <div class="web-footer-mid">
           <p class="socials-title">Social media</p>
 
           <ul class="footer-socials-menu">
@@ -429,6 +635,7 @@
             </li>
           </ul>
         </div>
+
         <div class="subscribe-div">
           <p class="subscribe-text">Subscribe</p>
           <form class="subscribe-form">
@@ -442,70 +649,174 @@
             </label>
             <button type="submit" class="subscribe-btn">
               Subscribe<svg class="btn-subscribe-svg" width="24" height="24">
-                <use href="./images/icons1.svg#icon-sendlogo"></use>
+                <use href="./images/icons.svg#icon-sendlogo"></use>
               </svg>
             </button>
           </form>
         </div>
       </div>
     </footer>
-     <!---Modal Frame-->
-     <div class="modal is-open">
-    <div class="modal-frame-div">
-      <button class="modal-button" type="button"><svg class="btn-modal-cls" width="8" height="8">
-        <use href="./images/icons3.svg#icon-close"></use>
-      </svg></button>
-      <p class="modal-text">Leave your contacts and we will call you back</p>
-      <form class="modal-form form" name="modal">
-        <div class="modal-form-div">
-           <label for="user-name" class="div-label">Name
-           </label>
-        <div class="input-div">
-           <input class="modal-input" id="user-name" name="user-name" type="text" >
-           <svg class="input-svg" width="18" height="24">
-            <use href="./images/icon5.svg#icon-person1"></use>
-            </svg>
+    <!---Modal Frame-->
+    <div class="backdrop">
+      <div class="modal-frame-div">
+        <button
+          class="modal-button"
+          type="button"
+          aria-label="Modal close button"
+        >
+          <svg class="btn-modal-cls" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-text">Leave your contacts and we will call you back</p>
+
+        <form class="modal-form form" name="modal">
+          <div class="modal-form-div">
+            <label for="user-name" class="div-label">Name </label>
+            <div class="input-div">
+              <input
+                class="modal-input"
+                id="user-name"
+                name="user-name"
+                type="text"
+              />
+              <svg class="input-svg" width="18" height="24">
+                <use href="./images/icons.svg#icon-person1"></use>
+              </svg>
+            </div>
           </div>
-        </div>
-        <div class="modal-form-div">
-          <label for="user-phone" class="div-label">Phone
-          </label>
-        <div class="input-div">
-          <input class="modal-input" id="user-phone" name="user-phone" type="tel" >
-          <svg class="input-svg" width="18" height="24">
-           <use href="./images/icon5.svg#icon-phone1"></use>
-           </svg>
+
+          <div class="modal-form-div">
+            <label for="user-phone" class="div-label">Phone </label>
+            <div class="input-div">
+              <input
+                class="modal-input"
+                id="user-phone"
+                name="user-phone"
+                type="tel"
+              />
+              <svg class="input-svg" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone1"></use>
+              </svg>
+            </div>
           </div>
-       </div>
-       <div class="modal-form-div">
-        <label for="user-email" class="div-label">Email
-        </label>
-     <div class="input-div">
-        <input class="modal-input" id="user-email" name="user-email" type="email" >
-        <svg class="input-svg" width="18" height="24">
-         <use href="./images/icon5.svg#icon-email1"></use>
-         </svg>
-        </div>
-     </div>
-     <div class="comments-div">
-        <label for="user-comment" class="div-label">Comment</label>
-        <textarea class="modal-textarea" name="user-comment" id="user-comment" placeholder="Text input" ></textarea>
-        </div>
-     <div class="check-div">
-       <input id="user-privacy" type="checkbox" value="true" name="user-privacy" class="input-checkbox visually-hidden" >
-       <label for="user-privacy" class="checkbox-label">
-        <span class="check-span"><svg class="checkbox-svg" width="10" height="8">
-        <use href="./images/icon8.svg#icon-Vector"></use>
-         </svg>
-       </span>
-           I accept the terms and conditions of the 
-           <a class="form-agreement-link" href="">Privacy Policy</a> 
-       </label>
-       </div>
-       <button type="submit" class="btn-send">Send</button>
-      </form>
+
+          <div class="modal-form-div">
+            <label for="user-email" class="div-label">Email </label>
+            <div class="input-div">
+              <input
+                class="modal-input"
+                id="user-email"
+                name="user-email"
+                type="email"
+              />
+              <svg class="input-svg" width="18" height="24">
+                <use href="./images/icons.svg#icon-email1"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="comments-div">
+            <label for="user-comment" class="div-label">Comment</label>
+            <textarea
+              class="modal-textarea"
+              name="user-comment"
+              id="user-comment"
+              rows="8"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+
+          <div class="check-div">
+            <input
+              id="user-privacy"
+              type="checkbox"
+              value="true"
+              name="user-privacy"
+              class="input-checkbox visually-hidden"
+            />
+            <label for="user-privacy" class="checkbox-label">
+              <span class="check-span"
+                ><svg class="checkbox-svg" width="10" height="8">
+                  <use href="./images/icons.svg#icon-Vector"></use>
+                </svg>
+
+                I accept the terms and conditions of the
+                <a class="form-agreement-link" href="">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-send">Send</button>
+        </form>
+      </div>
     </div>
-  </div>
-  
+    <!--MOBILE MENU-->
+    <div class="mobile-menu">
+      <div class="mob-container container">
+        <button class="menu-btn" type="button">
+          <svg class="menu-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <ul class="mobile-menu-list">
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link current" href="">Studio</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link" href="">Portfolio</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link" href="">Contacts</a>
+          </li>
+        </ul>
+
+        <div class="mobile-menu-wrapper">
+          <ul class="mobile-menu-contacts">
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-contact accent" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-contact" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-menu-socials">
+            <li class="social-li">
+              <a class="test" href="">
+                <svg class="logo-socials" width="24" height="24">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-li">
+              <a class="test" href="">
+                <svg class="logo-socials" width="24" height="24">
+                  <use href="./images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-li">
+              <a class="test" href="">
+                <svg class="logo-socials" width="24" height="24">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-li">
+              <a class="test" href="">
+                <svg class="logo-socials" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
